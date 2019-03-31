@@ -17,19 +17,6 @@ import java.util.List;
 @Slf4j
 public class TelegramPhotoBot extends TelegramLongPollingBot {
 
-
-    private class ImageMessage {
-        String numbers = null;
-        String caption = null;
-        String image = null;
-    }
-
-    private static final String INSTANCE_ID = "YOUR_INSTANCE_ID_HERE";
-    private static final String CLIENT_ID = "311771410";
-    private static final String CLIENT_SECRET = "YOUR_CLIENT_SECRET_HERE";
-
-    private static final String GATEWAY_URL = "https://api.telegram.org/bot705468703:AAFypv2QYdCHh5eSQR8UM-PgO1LDK6czWSk";
-
     private String botToken;
 
     @Autowired
