@@ -20,8 +20,8 @@ public class ScreenshotCreator {
             Robot robot = new Robot();
             String folderName = SystemOperations.createDirectory();
             String fileName = folderName.concat(DateTime.ConvertTimeToString(DateTime.getGMTTimeMillis()).concat(".png"));
-            Rectangle screenRect = new Rectangle(Toolkit.getDefaultToolkit()
-                    .getScreenSize());
+            //Rectangle screenRect = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
+            Rectangle screenRect = new Rectangle(1, 108, 1900, 1040);
             BufferedImage screenFullImage = robot.createScreenCapture(screenRect);
             ImageIO.write(screenFullImage, "png", new File(fileName));
             log.info("Screenshot created - {}", fileName);
