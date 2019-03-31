@@ -1,6 +1,7 @@
 package com.alex.services;
 
 import com.alex.telegram.TelegramPhotoBot;
+import com.alex.utils.SystemOperations;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -25,8 +26,8 @@ public class Scheduling {
     public void test() {
         screenshotCreator.FullScreenCapture();
 
-//        if (!dataHolder.getSubscriptions().isEmpty()) {
-//            telegramPhotoBot.pushPhotoMessage(dataHolder.getSubscriptions(),"/home/alexml/Pictures/2019-03-25.png");
-//        }
+        if (!dataHolder.getSubscriptions().isEmpty()) {
+            telegramPhotoBot.pushPhotoMessage(dataHolder.getSubscriptions(), SystemOperations.findLastFile());
+        }
     }
 }

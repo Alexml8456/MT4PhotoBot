@@ -1,7 +1,7 @@
 package com.alex.services;
 
 import com.alex.utils.DateTime;
-import com.alex.utils.FolderCreator;
+import com.alex.utils.SystemOperations;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +18,7 @@ public class ScreenshotCreator {
     public void FullScreenCapture() {
         try {
             Robot robot = new Robot();
-            String folderName = FolderCreator.createDirectory();
+            String folderName = SystemOperations.createDirectory();
             String fileName = folderName.concat(DateTime.ConvertTimeToString(DateTime.getGMTTimeMillis()).concat(".png"));
             Rectangle screenRect = new Rectangle(Toolkit.getDefaultToolkit()
                     .getScreenSize());

@@ -78,7 +78,7 @@ public class TelegramPhotoBot extends TelegramLongPollingBot {
             SendPhoto sendPhotoRequest = new SendPhoto();
             sendPhotoRequest.setChatId(chatId);
             sendPhotoRequest.setPhoto(new File(filePath));
-            sendPhotoRequest.setCaption("Photo");
+            //sendPhotoRequest.setCaption("Photo");
             try {
                 execute(sendPhotoRequest);
             } catch (TelegramApiException e) {
