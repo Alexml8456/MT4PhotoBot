@@ -15,7 +15,10 @@ public class SystemOperations {
     private static final String DIRECTORY_NAME = PATH.concat(FOLDER);
 
     public static String createDirectory() {
-        File directory = new File(DIRECTORY_NAME);
+        String path = ".".concat(File.separator);
+        String folder = DateTime.getCurrentDate(DateTime.getGMTTimeMillis());
+        String directoryName = path.concat(folder);
+        File directory = new File(directoryName);
         boolean isDirCreated = directory.mkdir();
         if (isDirCreated) {
             log.info("New folder created - {}", directory.getName());
